@@ -8,12 +8,60 @@
   <style>
     body {
       background-color: #f4f4f4;
+      font-family: sans-serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      background-color: #003366;
+      color: white;
+    }
+
+    header h1 {
+      margin-bottom: 5px;
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: white;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      list-style: none;
+      background-color: #005599;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
     }
 
     main {
       max-width: 900px;
       margin: 30px auto;
       padding: 20px;
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 28px;
+      color: #003366;
+      margin-bottom: 30px;
     }
 
     .card {
@@ -27,7 +75,19 @@
     .card h3 {
       color: #2c3e50;
       margin-bottom: 10px;
+      font-size: 20px;
     }
+
+    .card h3::before {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    .card:nth-of-type(2) h3::before { content: "👤"; }
+    .card:nth-of-type(3) h3::before { content: "🎓"; }
+    .card:nth-of-type(4) h3::before { content: "⚽"; }
+    .card:nth-of-type(5) h3::before { content: "💡"; }
 
     .card p {
       font-size: 16px;
@@ -68,14 +128,52 @@
     .download-btn:hover {
       background-color: #e64a05;
     }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .download-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      .card p,
+      .download-section p {
+        font-size: 15px;
+      }
+
+      .download-section h3 {
+        font-size: 20px;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <h1>Valentin Plastino</h1>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
     <nav>
-      <ul>
+      <ul id="nav-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="experience.html">Experience</a></li>
@@ -85,6 +183,8 @@
   </header>
 
   <main>
+    <h2 class="section-title">About</h2>
+
     <div class="card">
       <h3>Personal Background</h3>
       <p>I’m 23 years old and originally from Argentina. I moved to the United States 10 years ago and am fluent in both Spanish and English.</p>
@@ -115,6 +215,12 @@
   <footer>
     <p>&copy; 2025 Valentin Plastino</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-menu").classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>
