@@ -1,0 +1,153 @@
+/* ===== RESET AND BASE STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  padding-top: 100px; /* space below sticky header */
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin-bottom: 5px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  background-color: #005599;
+  padding: 10px 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+}
+
+h2 {
+  color: #003366;
+  margin-bottom: 10px;
+}
+
+ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+a {
+  color: #005599;
+}
+
+/* ===== INTRO SECTION (Welcome + Image) ===== */
+.intro {
+  display: flex;
+  align-items: flex-start; /* align tops */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.intro-text {
+  flex: 1;
+}
+
+.intro-img {
+  flex: 0 0 200px;
+}
+
+.intro-img img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ===== EXPLORE SECTION ===== */
+.explore {
+  margin-top: 40px;
+}
+
+.explore-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.explore-links a {
+  color: #005599;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #eef5ff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.explore-links a:hover {
+  background-color: #d2e6ff;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background-color: #003366;
+  color: white;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .intro {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .intro-img img {
+    width: 150px;
+  }
+
+  .explore-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
